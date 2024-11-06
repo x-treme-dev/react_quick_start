@@ -11,9 +11,13 @@
     </div>
     <script src="react/react.js"></script>
     <script src="react/react-dom.js"></script>
-    <script>
+    <script src="react/babel.js"></script>
+    <script type="text/babel">
+     /*My first component */
       ReactDOM.render(
-        React.createElement('h1', null, 'Hello world!'),
+        <h1 id="my-heading">
+        <span>Hello, <em>JSX</em></span> world!
+        </h1>,
         document.getElementById('app'),
       );
     </script>
