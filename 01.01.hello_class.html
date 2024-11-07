@@ -14,14 +14,16 @@
     <script src="react/babel.js"></script>
     <script type="text/babel">
      /*My first component */
-     const MyComponent = function({name, job}){
-      return <span>{name} is {job}!</span>;
-     };
-     MyComponent.defaultProps = {
+    class MyComponent extends React.Component{
+        render(){
+            return (<span>{this.props.name} is {this.props.job}</span>);
+        }
+    }
+    MyComponent.defaultProps = {
       job: 'engineer',
-     };
+    };
      ReactDOM.render(
-      <MyComponent name='Bob' job='pioneer'/>, 
+      <MyComponent name='John'/>,
       document.getElementById('app')
      );
     </script>
