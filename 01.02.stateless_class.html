@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello React</title>
+    <title>State</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="00.normal.css" />
   </head>
@@ -13,16 +13,23 @@
     <script src="react/react-dom.js"></script>
     <script src="react/babel.js"></script>
     <script type="text/babel">
-     /* Создать компонент как функцию, свойства доступны через {value} */
-     const MyComponent = function({name, job}){
-      return <span>{name} is {job}!</span>;
-     };
-     MyComponent.defaultProps = {
-      job: 'engineer',
-     };
+     class TextAreaCounter extends React.Component{
+        render(){
+            const text = this.props.text;
+            return(
+                <div>
+                    <textarea defaultValue={text}/>
+                    <h3>{text.length}</h3>  
+                </div>
+            );
+        }
+     }
+    TextAreaCounter.defaultProps = {
+      text: 'Count me as I type',
+    };
    /*Вызвать созданный компонент*/
      ReactDOM.render(
-      <MyComponent name='Bob' job='pioneer'/>, 
+      <TextAreaCounter text='Bob' />, 
       document.getElementById('app')
      );
     </script>
