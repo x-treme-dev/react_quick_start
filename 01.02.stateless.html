@@ -15,11 +15,16 @@
     <script type="text/babel">
      /* Создать компонент как функцию, свойства доступны через {value} */
      const TextAreaCounter = function({text}){
-      return <textarea rows="5" col="33">{text}</textarea>;
+      return (
+        <div>
+        <textarea rows="5" col="33">{text}</textarea>
+        <h3>{text.length}</h3>
+        </div>
+      );
      };
    /*Вызвать созданный компонент*/
      ReactDOM.render(
-      <TextAreaCounter text='Bob' />, 
+      <TextAreaCounter text='Bob is job' />, 
       document.getElementById('app')
      );
     </script>
